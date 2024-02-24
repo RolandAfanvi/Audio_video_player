@@ -20,7 +20,5 @@ namespace Movies_player
         {
             InitializeComponent();
         }
-
-        
     }
 }
