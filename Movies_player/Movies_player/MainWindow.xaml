@@ -5,18 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movies_player"
         mc:Ignorable="d"
-        Title="Movie Player" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <WrapPanel Background="Black">
+            <Label Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="800" Margin="0,0,0,10" >Movie Player</Label>
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Background="Black" BorderBrush="White"  Width="696" Height="30">Open mp3 file</TextBox>
+                <Button BorderBrush="#FF00FF10" Background="Black" Foreground="White"  Width="94" Margin="10,0,0,0">...</Button>
+            </StackPanel>
+            <StackPanel Margin="0,0,0,10">
+                <ProgressBar Height="50" Width="800" Margin="0,10,0,0"></ProgressBar>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid  ShowGridLines="False" Width="786" Height="200" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-    <WrapPanel Background="Black">
-        <Label Name="labelmoviePlayer" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="791" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,0,0">Movie Player</Label>
-        <TextBox x:Name="PathName" Foreground="White" Margin="0,0,10,0" Background="Black" BorderBrush="White" >C:/</TextBox>
-        <Button Width="25" Foreground="White" BorderBrush="#FF19FF00" Background="Black" Margin="10,0,0,0">...</Button>
-        <ProgressBar x:Name="Progression" Width="100" Height="25" Background="#FFCACACA" ></ProgressBar>
+                    <StackPanel x:Name="StackDeroulement" Orientation="Horizontal" Grid.Column="2" RenderTransformOrigin="1.132,0.485" Height="33" HorizontalAlignment="Right">
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">02:24</TextBox>
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">/</TextBox>
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">10:23</TextBox>
+                    </StackPanel>
 
-    </WrapPanel> >
-            
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.Column="1" Margin="10,32,0,40" HorizontalAlignment="Right">
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.395"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform> Play
+                        </Button>
+                        <Button Margin="2,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >Pause</Button>
+                        <Button Margin="2,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >Stop</Button>
+                    </StackPanel>
 
-       
+                    <StackPanel x:Name="sliderPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Margin="0,32,0,40" Width="80">
+                        <Slider Width="100" ValueChanged="Slider_ValueChanged" Height="64" HorizontalAlignment="Center" />
+                    </StackPanel>
 
-    
+
+                </Grid>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
 </Window>
