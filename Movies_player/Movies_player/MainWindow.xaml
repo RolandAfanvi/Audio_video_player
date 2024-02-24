@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movies_player"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Movie Player" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid Background="Black" Margin="10,0,0,0">
+        <WrapPanel Background="Black">
+            <Label Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="800" Margin="0,0,0,10" >Movie Player</Label>
+            <StackPanel Orientation="Horizontal" Width="800" >
+                <TextBox Background="Black" BorderBrush="White"  Width="670" Height="30">Open mp3 file</TextBox>
+                <Button BorderBrush="#FF00FF10" Background="Black" Foreground="White"  Width="80" Margin="10,0,0,0">...</Button>
+            </StackPanel>
+            <StackPanel Margin="0,0,0,10">
+                <ProgressBar Height="50" Width="760" Margin="0,10,0,0"></ProgressBar>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid  ShowGridLines="False" Width="756" Height="200" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
+                    <StackPanel x:Name="StackDeroulement" Orientation="Horizontal" Grid.Column="2" RenderTransformOrigin="1.132,0.485" Height="33" HorizontalAlignment="Right">
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">02:24</TextBox>
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">/</TextBox>
+                        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center">10:23</TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.Column="1" Margin="10,32,0,40" HorizontalAlignment="Right">
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.395"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform> Play
+                        </Button>
+                        <Button Margin="2,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >Pause</Button>
+                        <Button Margin="2,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >Stop</Button>
+                    </StackPanel>
+
+                    <StackPanel x:Name="sliderPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Margin="0,32,0,40" Width="80">
+                        <Slider Width="96"  Height="64" />
+                    </StackPanel>
+
+
+                </Grid>
+            </StackPanel>
+        </WrapPanel>
     </Grid>
 </Window>
