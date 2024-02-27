@@ -38,7 +38,8 @@ namespace Movies_player
                 LoadedBehavior = MediaState.Manual,
                 UnloadedBehavior = MediaState.Stop
             };
-            
+            grid.Children.Add(mediaPlayer);
+
 
         }
         private void ButtonOpen_Click(object sender, RoutedEventArgs e)
@@ -53,7 +54,7 @@ namespace Movies_player
                 OpenText.Text = selectedFilePath;
 
                 mediaPlayer.Source = new Uri(selectedFilePath);
-                //Debug.WriteLine(mediaPlayer.Play());
+                
                 mediaPlayer.Play();
 
                 timer.Start();
